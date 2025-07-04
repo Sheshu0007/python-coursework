@@ -24,4 +24,3 @@ print(a, b)
 #deleting the values
 x = 100
 del x
-
