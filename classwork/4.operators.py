@@ -46,3 +46,17 @@ l=1,3,4,6,7,8,54,3,6,8,4,6,55
 
 
 #6. Identity Operators
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+print(a is b) # Output: True (Both refer to the same
+print(a is c) # Output: False (Different objects with the
+print(a is not c) # Output: True
+
+#Bitwise Operators 
+x=5
+y=2
+print(x&y)
+print(x|y)
+print(x^y)
+print(~x)
