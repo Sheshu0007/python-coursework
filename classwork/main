@@ -1,0 +1,8 @@
+import modules as mo
+a=int(input("enter the number"))
+b=int(input("enter the number"))
+
+op=input("enter the op(+,-,*,/)")
+
+if op=="+":
+    mo.add(a,b)
