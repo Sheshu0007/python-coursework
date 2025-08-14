@@ -1,0 +1,123 @@
+def greet(name):
+    print(f'{name} welcome')
+greet("sheshu")
+
+def addition(a,b):
+    return a+b
+print(addition(4,6))
+
+def greet1(name="guest"):#If no value is passed, default is used.
+    print(f'{name} welcome')
+greet1()
+
+# Keyword Arguments
+def greet2(name,age):
+    print(f"The person name is {name} and the age is {age}")
+greet2("sheshu",23)
+
+#Local Scope 
+def greet3():
+    msg="sheshu"
+    print(msg)
+greet3()
+
+
+#global variable and update
+messag="hello"
+def outter():
+   global messag
+   messag="hi"
+outter()
+print(messag)
+
+#enclosing scope
+def outter1():
+    mssg=10
+    def inner():
+        print(mssg)
+        
+        inner()
+outter1()
+
+#nonlocal
+def outter1():
+    mssg=10
+    def inner():
+        nonlocal mssg
+        print(mssg)
+        
+        inner()
+outter1()
+
+
+def outer():
+    msg2 = "Hi"
+    print(msg2)
+    def inner():
+        nonlocal msg2
+        msg2="hello"
+        print(msg2) # Enclosing scope variable is found in enclosing scope area to update the enclosing scope variable we need to update the variable into nonlocal because the msg is not local for inner function
+    inner()
+    print(msg2)
+outer()
+#global x = "global"
+x="global"
+def outer():
+    global x
+    x="global1"
+    print(x)
+    def inner():
+        x = "local"
+        print(x) # Looks for local, enclosing, global,
+    inner()
+outer()
+print(x)
+
+
+#recursive functions
+def sum_1(n):
+    if n==0: 
+        return 0
+    else:
+        return n + sum_1(n-1)
+print(sum_1(5))
+
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+print(fact(5))
+
+def modify_list_copy(lst):
+    lst = lst[:] # Creates a copy
+    lst.append(5)
+    print("Inside function:", lst)
+
+numbers = [1, 2, 3]
+modify_list_copy(numbers)
+print("Outside function:", numbers)
+
+
+
+#lambda
+lst=[1,2,3,4,5,6,7]
+squ=list(map(lambda x:x*x,lst))
+print(squ)
+
+for i in lst:
+    squa=(lambda x: x*x)(i)
+    print(squa)
+
+#filter
+lst1=[1,2,3,4,5,6,7,8,9]
+even=list(filter(lambda x:x%2==0,lst1))
+print(even)
+
+students = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
+stored_students=sorted(students,key=lambda x:x[1])
+print(stored_students)
+
+grades = {"Alice": 85, "Bob": 92, "Charlie": 78}
+sorted_grads=dict(sorted(grades.items(),key=lambda x:x[1]))
+print(sorted_grads)
