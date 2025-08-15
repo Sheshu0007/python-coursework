@@ -1,4 +1,4 @@
-# Input chat data
+
 chat = {}
 n = int(input("Enter number of chats: "))
 for _ in range(n):
@@ -8,7 +8,8 @@ for _ in range(n):
     else:
         chat[name] = [mssg]
 
-# Menu
+
+
 while True:
     print("\n1.Total messages 2.Unique users 3.Total words 4.Avg words/message 5.Longest message")
     print("6.Most active user 7.User message count 8.Most frequent word 9.First & Last message 10.Check user 11.Repeated words 12.Exit")

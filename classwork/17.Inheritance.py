@@ -150,3 +150,21 @@ shiva.comment()
 shiva.caption()
 shiva.uploading()
 shiva.uploadvid()
+
+class instagram_story:
+    def __init__(self,user):
+        self.user=user
+        self.story_content=""
+    def post_story(self,content):
+        self.story_content=content
+        return(f"{self.user}posted a story:{content}")
+
+
+class Student:
+    def __init__(self,name,mark1):
+        self.name=name
+        self.mark1=mark1
+        
+        print(name)
+        print(sum(mark1)/len(mark1))
+s1=Student("sheshu",[25,24,50])
