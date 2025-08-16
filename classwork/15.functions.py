@@ -1,3 +1,18 @@
+def sum_of_digits(n):
+    if n == 0:
+        print("Reached base case, returning 0")
+        return 0
+    else:
+        last_digit = n % 10
+        remaining = n // 10
+        print(f"At n={n}: last_digit={last_digit}, remaining={remaining}")
+        
+        result = last_digit + sum_of_digits(remaining)
+        print(f"Returning {result} for n={n}")
+        return result
+
+# Example
+print("Final Answer:", sum_of_digits(1234))
 def greet(name):
     print(f'{name} welcome')
 greet("sheshu")
@@ -98,26 +113,3 @@ numbers = [1, 2, 3]
 modify_list_copy(numbers)
 print("Outside function:", numbers)
 
-
-
-#lambda
-lst=[1,2,3,4,5,6,7]
-squ=list(map(lambda x:x*x,lst))
-print(squ)
-
-for i in lst:
-    squa=(lambda x: x*x)(i)
-    print(squa)
-
-#filter
-lst1=[1,2,3,4,5,6,7,8,9]
-even=list(filter(lambda x:x%2==0,lst1))
-print(even)
-
-students = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
-stored_students=sorted(students,key=lambda x:x[1])
-print(stored_students)
-
-grades = {"Alice": 85, "Bob": 92, "Charlie": 78}
-sorted_grads=dict(sorted(grades.items(),key=lambda x:x[1]))
-print(sorted_grads)
