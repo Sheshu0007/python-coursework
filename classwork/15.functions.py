@@ -113,3 +113,58 @@ numbers = [1, 2, 3]
 modify_list_copy(numbers)
 print("Outside function:", numbers)
 
+
+
+
+
+
+
+def summ(n):
+    if n==1:
+        return 1
+    return n * summ(n-1)
+print(summ(5))
+
+
+def display(s,ind):
+    if ind==len(s):
+        return 
+    display(s,ind+1)
+    print(s[ind],end="")
+
+
+
+def feb(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else : return feb(n-1)+feb(n-2)
+print(feb(7))
+
+def sumofdig(n):
+    if n==0:
+        return 0
+    return (n%10)+sumofdig(n//10)
+print(sumofdig(1234))
+
+def countofnum(n):
+    if n==0:
+        return 0
+    return 1+countofnum(n//10)
+print(countofnum(1234))
+
+
+class employee:
+    def __init__(self,first,last,pay):
+        self.first=first
+        self.last=last
+        self.pay=pay
+        print(first,last)
+    
+    def bonus(self):
+        self.pay=int(self.pay * 40)
+
+emp1=employee("sheshu","reddy",3000) 
+emp1.bonus()   
+print(emp1.pay)
