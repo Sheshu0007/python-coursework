@@ -37,15 +37,51 @@ def menu():
     print('[V]iew Transactions')
     print('[E]xit\n')
 
-def Check_Balance():
+def deposit():
     if login_status and acc_num:
-        print(f"Current balance:{data[acc_num]["balance"]}")
+        amount = int(input("Enter the amount to deposit: "))
+        if amount > 0:
+            data[acc_num]["balance"] += amount
+            data[acc_num]["history"].append(f"Deposited {amount}")
+            print(f"✅ {amount} deposited successfully!")
+        else:
+            print("⚠️ Invalid amount.")
     else:
-        print("you need to login again")
+        print("⚠️ You need to login again.")
 
-def Withdraw():
+
+# Withdraw
+def withdraw():
     if login_status and acc_num:
-        amount=int(input("enter the amount to withdraw"))
-        if data[acc_num]["balance"]>=amount:
-            data[acc_num]-=amount
-            data[acc_num]["history"]
+        amount = int(input("Enter the amount to withdraw: "))
+        if amount > 0 and data[acc_num]["balance"] >= amount:
+            data[acc_num]["balance"] -= amount
+            data[acc_num]["history"].append(f"Withdrew {amount}")
+            print(f"✅ {amount} withdrawn successfully!")
+        else:
+            print("⚠️ Insufficient balance or invalid amount.")
+    else:
+        print("⚠️ You need to login again.")
+
+
+# View Transactions
+def view_transactions():
+    if login_status and acc_num:
+        print("\n📜 Transaction History:")
+        if data[acc_num]["history"]:
+            for t in data[acc_num]["history"]:
+                print("-", t)
+        else:
+            print("No transactions yet.")
+    else:
+        print("⚠️ You need to login again.")
+
+
+def Exit():
+    print("Thank you for using the ATM. Goodbye!")
+    exit()
+
+
+
+    # A= write a different types of program snd with function in another file 
+    

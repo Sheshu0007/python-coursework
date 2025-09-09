@@ -33,3 +33,5 @@ print(lin_space)
 randominteger=np.random.randint(1,100)
 print(randominteger)
 
+hour,minu=map(int,input().split())
+print(f"{hour:02d}:{minu:02d}")
